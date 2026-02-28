@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My lavender 🪻 Noora</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 120px;
+            font-size: 45px;
+            color: white;
+        }
+
+        p {
+            font-size: 20px;
+            color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+            color: #ee6c8a;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffe6eb;
+        }
+
+        #hiddenMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .heart {
+            position: absolute;
+            color: white;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-10vh); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>I love you 💖</h1>
+    <p>Click below for something important.</p>
+
+    <button onclick="reveal()">Open Message</button>
+
+    <p id="hiddenMessage">
+        I'm so glad to meet you you're so pretty NO NAZAR & May janabe Zahraس be pleased with you 🩷. 💕
+    </p>
+
+    <button onclick="hug()">Send Virtual Hug 🤗</button>
+
+    <script>
+        function reveal() {
+            document.getElementById("hiddenMessage").style.display = "block";
+        }
+
+        function hug() {
+            alert("Consider this your tightest long-distance hug 🤭");
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💗";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
